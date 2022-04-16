@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Reviews.css";
 import people from "../../data";
 
@@ -65,3 +65,56 @@ class Reviews extends React.Component {
 }
 
 export default Reviews;
+
+// const Review = () => {
+//   const [index, setIndex] = useState(0);
+//   const { name, job, image, text } = people[index];
+//   const checkNumber = (number) => {
+//     if (number > people.length - 1) {
+//       return 0;
+//     }
+//     if (number < 0) {
+//       return people.length - 1;
+//     }
+//     return number;
+//   };
+//   const nextPerson = () => {
+//     setIndex((index) => {
+//       let newIndex = index + 1;
+//       return checkNumber(newIndex);
+//     });
+//   };
+//   const prevPerson = () => {
+//     setIndex((index) => {
+//       let newIndex = index - 1;
+//       return checkNumber(newIndex);
+//     });
+//   };
+//   const randomPerson = () => {
+//     let randomNumber = Math.floor(Math.random() * people.length);
+//     if (randomNumber === index) {
+//       randomNumber = index + 1;
+//     }
+//     setIndex(checkNumber(randomNumber));
+//   };
+
+//   return (
+//     <div className="container">
+//       <div className="image">
+//         <img src={image} alt={name} />
+//       </div>
+//       <div className="info">
+//         <h4>{name}</h4>
+//         <p>{job}</p>
+//         <p>{text}</p>
+//         <div className="buttons">
+//           <button onClick={prevPerson}>previous</button>
+//           <button onClick={nextPerson}>next</button>
+//         </div>
+//         <button onClick={randomPerson}>surprise me</button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Review;
