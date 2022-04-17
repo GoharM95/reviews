@@ -32,7 +32,7 @@ class Reviews extends React.Component {
     this.setState({ index: nextIndex });
   };
 
-  componentDidMount() {}
+  componentDidUpdate() {}
 
   //   randomPerson = () => {
   //     const randomIndex = Math.floor(Math.random() * people.length);
