@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Reviews.css";
 import people from "../../data";
 
+//---------- test
+
 class Reviews extends React.Component {
   state = { index: 0 };
 
