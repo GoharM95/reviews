@@ -15,15 +15,16 @@ class Reviews extends React.Component {
     }
   };
 
-  prevPerson = (index) => {
+  handlePrevBtnClick = () => {
+    const { index } = this.state;
     this.checkIndex(index - 1);
   };
 
-  nextPerson = (index) => {
+  handleNextBtnClick = (index) => {
     this.checkIndex(index + 1);
   };
 
-  randomPerson = () => {
+  handleRandomBtnClick = () => {
     const randomIndex = Math.floor(Math.random() * people.length);
     this.checkIndex(randomIndex);
   };
@@ -43,11 +44,11 @@ class Reviews extends React.Component {
           <h3>{job}</h3>
           <p>{text}</p>
           <div className="buttons">
-            <button onClick={() => this.prevPerson(index)}>previous</button>
-            <button onClick={() => this.nextPerson(index)}>next</button>
+            <button onClick={this.handlePrevBtnClick}>previous</button>
+            <button onClick={() => this.handleNextBtnClick(index)}>next</button>
           </div>
 
-          <button onClick={this.randomPerson}>surprise me</button>
+          <button onClick={this.handleRandomBtnClick}>surprise me</button>
         </div>
       </div>
     );
@@ -68,19 +69,19 @@ export default Reviews;
 //     }
 //     return number;
 //   };
-//   const nextPerson = () => {
+//   const handleNextBtnClick = () => {
 //     setIndex((index) => {
 //       let newIndex = index + 1;
 //       return checkNumber(newIndex);
 //     });
 //   };
-//   const prevPerson = () => {
+//   const handlePrevBtnClick = () => {
 //     setIndex((index) => {
 //       let newIndex = index - 1;
 //       return checkNumber(newIndex);
 //     });
 //   };
-//   const randomPerson = () => {
+//   const handleRandomBtnClick = () => {
 //     let randomNumber = Math.floor(Math.random() * people.length);
 //     if (randomNumber === index) {
 //       randomNumber = index + 1;
@@ -98,10 +99,10 @@ export default Reviews;
 //         <p>{job}</p>
 //         <p>{text}</p>
 //         <div className="buttons">
-//           <button onClick={prevPerson}>previous</button>
-//           <button onClick={nextPerson}>next</button>
+//           <button onClick={handlePrevBtnClick}>previous</button>
+//           <button onClick={handleNextBtnClick}>next</button>
 //         </div>
-//         <button onClick={randomPerson}>surprise me</button>
+//         <button onClick={handleRandomBtnClick}>surprise me</button>
 //       </div>
 //     </div>
 //   );
